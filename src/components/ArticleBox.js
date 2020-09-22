@@ -1,17 +1,32 @@
 import React, { Component } from 'react';
+import "./ArticleBox.css";
 
 class ArticleBox extends Component {
     render() {
+        const categories = ["Objectivism", "reason", "man", "Lorem", "Ipsum", "Dolor", "Sit", "Amet"];
         return (
-            <>
-                <p>Lorem ipsum ayn rand amet</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                    Tincidunt risus porta quis amet sem senectus etiam lectus nisi. 
-                    Non risus feugiat nec nunc. Nibh tincidunt cursus porttitor scelerisque quisque. 
-                    Vulputate e ros, v enenatis ullamcorper urna risus nec. 
-                    Nunc, nec convallis tellus lorem commodo pretium dictumst diam, felis.
-                </p>
-            </>
+            <div className="container">
+                <div>
+                    <p className="title">{this.props.title}</p>
+                    <p className="description">{this.props.description}</p>
+                    <hr className="separator"/>
+                    <div>
+                        <p className="date">{this.props.date}</p>
+                        <p className="read-time">{this.props.time}</p>
+                    </div>
+                    <div>
+                        <p className="categories">Categories:
+                            {categories.map(category => {
+                                return <span>{category}</span>;
+                            })}
+                        </p>
+                    </div>
+
+                </div>
+                <div>
+                    <img src={this.props.image} alt="Man walking on stairs" />
+                </div>
+            </div>
         )
     }
 }

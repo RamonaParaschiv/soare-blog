@@ -1,0 +1,132 @@
+.container {
+    display: flex;
+    margin: auto;
+    margin-top: 10vh;
+    position: relative;
+    width: 1136px;
+    height: 416px;
+
+    background: #FFFFFF;
+    border-radius: 10px;
+
+    -webkit-box-shadow: 6px 3px 19px -8px rgba(0,0,0,0.75);
+    -moz-box-shadow: 6px 3px 19px -8px rgba(0,0,0,0.75);
+    box-shadow: 6px 3px 19px -8px rgba(0,0,0,0.75);
+}
+
+img {
+    position: absolute;
+    left: 61%;
+    right: 3.87%;
+    top: 5.29%;
+    bottom: 20.91%;
+}
+
+.title {
+    position: absolute;
+    left: 3.35%;
+    right: 39%;
+    top: 5.29%;
+    bottom: 72.12%;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 28px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+
+    color: #000000;
+}
+
+.description {
+    position: absolute;
+    left: 3.7%;
+    right: 40.05%;
+    top: 27.88%;
+    bottom: 53.37%;
+
+    font-family: Merienda;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 10px;
+    line-height: 14px;
+    letter-spacing: 0.12em;
+
+    color: #000000;
+}
+
+.separator {
+    position: absolute;
+    left: 9.3%;
+    right: 54.31%;
+    top: 49.04%;
+    bottom: 50.96%;
+
+    /* Gold */
+
+    border-top: 0.5px solid #FFC804;
+}
+
+.date {
+    position: absolute;
+    right: 87.85%;
+    top: 57.45%;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 8px;
+    line-height: 9px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.read-time {
+    position: absolute;
+    right: 75.53%;
+    top: 57.45%;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 8px;
+    line-height: 9px;
+    letter-spacing: 0.08em;
+
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.categories {
+    position: absolute;
+    left: 3.35%;
+    right: 39%;
+    top: 71.15%;
+    bottom: 20.91%;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.categories span {
+    text-decoration: underline;
+    /* border-bottom: 1px solid; */
+    /* color: #FF9900; */
+    color: #FFC804;
+}
+
+.categories span:not(:last-child)::after {
+    content: " - ";
+    color: rgba(0, 0, 0, 0.5);
+}
