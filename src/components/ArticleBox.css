@@ -1,10 +1,13 @@
-.container {
+html {
+    font-size: 0.625em;
+}
+
+.mini-article-container {
     display: flex;
     margin: auto;
     margin-top: 10vh;
-    position: relative;
-    width: 1136px;
-    height: 416px;
+    /* width: auto; */
+     max-height: 40.7em; 
 
     background: #FFFFFF;
     border-radius: 10px;
@@ -12,43 +15,48 @@
     -webkit-box-shadow: 6px 3px 19px -8px rgba(0,0,0,0.75);
     -moz-box-shadow: 6px 3px 19px -8px rgba(0,0,0,0.75);
     box-shadow: 6px 3px 19px -8px rgba(0,0,0,0.75);
+
+    box-sizing: border-box;
+    padding-left: 3rem;
+    padding-top: 2rem;
+    padding-right: 3rem;
+    padding-bottom: 8rem;
 }
 
-img {
-    position: absolute;
-    left: 61%;
-    right: 3.87%;
-    top: 5.29%;
-    bottom: 20.91%;
+.mini-article-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-right: 5em;
 }
 
-.title {
-    position: absolute;
-    left: 3.35%;
-    right: 39%;
-    top: 5.29%;
-    bottom: 72.12%;
 
+.mini-article-image {
+    /* I want this image to not scale up bigger than its original width value so I restrict its max-width*/
+    /* I want this image to scale down when resize broser so I will need to use media queries*/ 
+    max-width: 100%;
+    /* height: auto; */
+}
+
+.mini-article-date-and-time {
+    display: flex;
+}
+
+.mini-article-title {
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
     font-size: 24px;
     line-height: 28px;
-    display: flex;
-    align-items: center;
     letter-spacing: 0.12em;
     text-transform: uppercase;
+    padding: 1.2rem 0 2rem 0;
+    margin-top: 0;
 
     color: #000000;
 }
 
-.description {
-    position: absolute;
-    left: 3.7%;
-    right: 40.05%;
-    top: 27.88%;
-    bottom: 53.37%;
-
+.mini-article-description {
     font-family: Merienda;
     font-style: normal;
     font-weight: bold;
@@ -59,22 +67,15 @@ img {
     color: #000000;
 }
 
-.separator {
-    position: absolute;
-    left: 9.3%;
-    right: 54.31%;
-    top: 49.04%;
-    bottom: 50.96%;
+.mini-article-separator {
+    margin: 2rem 10rem;
 
     /* Gold */
 
     border-top: 0.5px solid #FFC804;
 }
 
-.date {
-    position: absolute;
-    right: 87.85%;
-    top: 57.45%;
+.mini-article-date {
 
     font-family: Roboto;
     font-style: normal;
@@ -87,10 +88,8 @@ img {
     color: rgba(0, 0, 0, 0.6);
 }
 
-.read-time {
-    position: absolute;
-    right: 75.53%;
-    top: 57.45%;
+.mini-article-read-time {
+    
 
     font-family: Roboto;
     font-style: normal;
@@ -98,16 +97,13 @@ img {
     font-size: 8px;
     line-height: 9px;
     letter-spacing: 0.08em;
+    padding-left: 5em;
 
     color: rgba(0, 0, 0, 0.6);
 }
 
-.categories {
-    position: absolute;
-    left: 3.35%;
-    right: 39%;
-    top: 71.15%;
-    bottom: 20.91%;
+.mini-article-categories {
+    
 
     font-family: Roboto;
     font-style: normal;
@@ -119,14 +115,41 @@ img {
     color: rgba(0, 0, 0, 0.5);
 }
 
-.categories span {
+.mini-article-categories-container {
+}
+
+.mini-article-categories span {
     text-decoration: underline;
     /* border-bottom: 1px solid; */
     /* color: #FF9900; */
     color: #FFC804;
 }
 
-.categories span:not(:last-child)::after {
+.mini-article-categories span:not(:last-child)::after {
     content: " - ";
     color: rgba(0, 0, 0, 0.5);
 }
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .mini-article-image {
+        width: 50%;
+    }
+
+    .mini-article-title {
+        font-size: 16px;
+        letter-spacing: 0.08em;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+/* @media only screen and (min-width: 600px) {...} */
+
+/* Medium devices (landscape tablets, 768px and up) */
+/* @media only screen and (min-width: 768px) {...} */
+
+/* Large devices (laptops/desktops, 992px and up) */
+/* @media only screen and (min-width: 992px) {...} */
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+/* @media only screen and (min-width: 1200px) {...} */

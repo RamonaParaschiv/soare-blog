@@ -3,19 +3,26 @@ import "./ArticleBox.css";
 
 class ArticleBox extends Component {
     render() {
-        const categories = ["Objectivism", "reason", "man", "Lorem", "Ipsum", "Dolor", "Sit", "Amet"];
+        const description = this.props.description;
+        const categories = this.props.categories;
         return (
-            <div className="container">
-                <div>
-                    <p className="title">{this.props.title}</p>
-                    <p className="description">{this.props.description}</p>
-                    <hr className="separator"/>
+            <div className="mini-article-container">
+                <div className="mini-article-content">
                     <div>
-                        <p className="date">{this.props.date}</p>
-                        <p className="read-time">{this.props.time}</p>
+                        <p className="mini-article-title">{this.props.title}</p>
+                    <div className="mini-article-description">
+                        {description.map(desc => {
+                                return <p>{desc}</p>;
+                            })}
                     </div>
-                    <div>
-                        <p className="categories">Categories:
+                    <hr className="mini-article-separator"/>
+                    <div className="mini-article-date-and-time">
+                        <p className="mini-article-date">{this.props.date}</p>
+                        <p className="mini-article-read-time">{this.props.time}</p>
+                    </div>
+                    </div>
+                    <div className="mini-article-categories-container">
+                        <p className="mini-article-categories">Categories:
                             {categories.map(category => {
                                 return <span>{category}</span>;
                             })}
@@ -23,9 +30,8 @@ class ArticleBox extends Component {
                     </div>
 
                 </div>
-                <div>
-                    <img src={this.props.image} alt="Man walking on stairs" />
-                </div>
+                
+                    <img className="mini-article-image" src={this.props.image} alt="Man walking on stairs" />
             </div>
         )
     }
