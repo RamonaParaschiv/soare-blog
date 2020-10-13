@@ -3,17 +3,15 @@ import "./ArticleBox.css";
 
 class ArticleBox extends Component {
     render() {
-        const description = this.props.description;
         const categories = this.props.categories;
         return (
             <div className="mini-article-container">
+            <div className="mini-article-container-flex">
                 <div className="mini-article-content">
                     <div>
                         <p className="mini-article-title">{this.props.title}</p>
                     <div className="mini-article-description">
-                        {description.map(desc => {
-                                return <p>{desc}</p>;
-                            })}
+                        <p>{this.props.description}</p>
                     </div>
                     <hr className="mini-article-separator"/>
                     <div className="mini-article-date-and-time">
@@ -21,18 +19,19 @@ class ArticleBox extends Component {
                         <p className="mini-article-read-time">{this.props.time}</p>
                     </div>
                     </div>
+                </div>
+                    <img className="mini-article-image" src={this.props.image} alt="Man walking on stairs" />
+            </div>
                     <div className="mini-article-categories-container">
-                        <p className="mini-article-categories">Categories:
+                        <p className="mini-article-categories">
+                            <p>Categories:</p>
                             {categories.map(category => {
-                                return <span>{category}</span>;
+                                return <p>{category}</p>;
                             })}
                         </p>
                     </div>
-
-                </div>
-                
-                    <img className="mini-article-image" src={this.props.image} alt="Man walking on stairs" />
             </div>
+            
         )
     }
 }

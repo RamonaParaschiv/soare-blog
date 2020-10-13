@@ -1,14 +1,9 @@
 html {
     font-size: 0.625em;
+    padding: 1em;
 }
 
 .mini-article-container {
-    display: flex;
-    margin: auto;
-    margin-top: 10vh;
-    /* width: auto; */
-     max-height: 40.7em; 
-
     background: #FFFFFF;
     border-radius: 10px;
 
@@ -17,29 +12,33 @@ html {
     box-shadow: 6px 3px 19px -8px rgba(0,0,0,0.75);
 
     box-sizing: border-box;
-    padding-left: 3rem;
-    padding-top: 2rem;
-    padding-right: 3rem;
-    padding-bottom: 8rem;
+    padding: 2rem 3rem 3rem 3rem;
+}
+
+.mini-article-container-flex {
+    display: flex;
+    justify-content: space-between; 
 }
 
 .mini-article-content {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    margin-right: 5em;
+    justify-content: space-between; 
 }
 
 
 .mini-article-image {
     /* I want this image to not scale up bigger than its original width value so I restrict its max-width*/
     /* I want this image to scale down when resize broser so I will need to use media queries*/ 
-    max-width: 100%;
+     max-width: 100%; 
+     height: 307px;
+     border-radius: 1em;
     /* height: auto; */
 }
 
 .mini-article-date-and-time {
     display: flex;
+    text-transform: uppercase;
 }
 
 .mini-article-title {
@@ -47,13 +46,19 @@ html {
     font-style: normal;
     font-weight: normal;
     font-size: 24px;
-    line-height: 28px;
+    /* line-height: 28px; */
     letter-spacing: 0.12em;
     text-transform: uppercase;
     padding: 1.2rem 0 2rem 0;
     margin-top: 0;
 
     color: #000000;
+    transition: all 1s ease;
+}
+
+.mini-article-title:hover {
+    color: #FFC804;
+    text-decoration: underline;
 }
 
 .mini-article-description {
@@ -68,15 +73,22 @@ html {
 }
 
 .mini-article-separator {
-    margin: 2rem 10rem;
+     margin: 2rem 10rem; 
 
     /* Gold */
-
-    border-top: 0.5px solid #FFC804;
+    /* border-top: 0.5px solid #FFC804; */
+    /* border-bottom: 0.5px solid white; */
+    height: 0.5px;
+    background-color: #FFC804;
+    border: none;
 }
 
-.mini-article-date {
+/* .mini-article-separator:after,
+.mini-article-separator:before {
+    content: '';
+} */
 
+.mini-article-date {
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
@@ -89,8 +101,6 @@ html {
 }
 
 .mini-article-read-time {
-    
-
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
@@ -103,8 +113,8 @@ html {
 }
 
 .mini-article-categories {
-    
-
+    display: flex;
+    flex-wrap: wrap;
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
@@ -118,38 +128,116 @@ html {
 .mini-article-categories-container {
 }
 
-.mini-article-categories span {
+.mini-article-categories p:not(:first-of-type) {
     text-decoration: underline;
     /* border-bottom: 1px solid; */
     /* color: #FF9900; */
     color: #FFC804;
+    margin-right: 0.4em;
 }
 
-.mini-article-categories span:not(:last-child)::after {
+/* .mini-article-categories span:not(:last-child)::after {
     content: " - ";
     color: rgba(0, 0, 0, 0.5);
-}
+} */
+
+/* //////////////////////////      Media Queries         ///////////////////////////// */
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-    .mini-article-image {
-        width: 50%;
+    .mini-article-container-flex {
+        display: flex;
+        flex-direction: column-reverse; 
+    }
+
+    .mini-article-container {
+        height: 100%; 
+        padding: 2em;
+    }
+
+    .mini-article-description p:not(:nth-of-type(1)),
+    .mini-article-separator,
+    .mini-article-categories p:first-of-type {
+        display: none;
     }
 
     .mini-article-title {
         font-size: 16px;
-        letter-spacing: 0.08em;
+        padding: 1.2rem 0 0 0;
+    }
+
+    .mini-article-image {
+        height: auto;
+    }
+
+    .mini-article-categories {
+        line-height: 0px;
+        font-size: inherit;
     }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
-/* @media only screen and (min-width: 600px) {...} */
+ @media only screen and (min-width: 600px) and (max-width: 767px) {
+     .mini-article-container {
+        min-height: auto;
+        padding-bottom: 2rem;
+     }
+
+    .mini-article-description p:not(:nth-of-type(1)),
+    .mini-article-separator,
+    .mini-article-categories p:first-of-type {
+        display: none;
+    }
+
+    .mini-article-image {
+        height: 200px;
+        width: 260px; 
+    }
+
+    .mini-article-title {
+        padding: 1.2rem 0 0 0;
+    }
+ } 
 
 /* Medium devices (landscape tablets, 768px and up) */
-/* @media only screen and (min-width: 768px) {...} */
+ @media only screen and (min-width: 768px) {
+     .mini-article-description {
+        font-family: Merienda;
+        font-style: normal;
+        font-weight: bold;
+        letter-spacing: 0.2em;
+
+        color: #000000;
+    }
+
+    .mini-article-separator {
+        display: block;
+    }
+
+    .mini-article-title {
+        font-size: 2.8em;
+        margin-bottom: 0;
+    }
+
+    .mini-article-image {
+        height: 231px;
+        width: 300px; 
+    }
+
+    /* .mini-article-date-and-time p {
+        font-size: 1.4em;
+    } */
+
+    /* .mini-article-categories {
+        font-size: 1.6em;
+    } */
+ } 
 
 /* Large devices (laptops/desktops, 992px and up) */
 /* @media only screen and (min-width: 992px) {...} */
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 /* @media only screen and (min-width: 1200px) {...} */
+
+
+
