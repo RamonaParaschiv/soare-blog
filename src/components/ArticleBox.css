@@ -3,7 +3,7 @@ html {
     padding: 1em;
 }
 
-.mini-article-container {
+.mini-article {
     background: #FFFFFF;
     border-radius: 10px;
 
@@ -15,19 +15,19 @@ html {
     padding: 2rem 3rem 3rem 3rem;
 }
 
-.mini-article-container-flex {
+.mini-article--flex {
     display: flex;
     justify-content: space-between; 
 }
 
-.mini-article-content {
+.mini-article--flex-column {
     display: flex;
     flex-direction: column;
     justify-content: space-between; 
 }
 
 
-.mini-article-image {
+.mini-article__image {
     /* I want this image to not scale up bigger than its original width value so I restrict its max-width*/
     /* I want this image to scale down when resize broser so I will need to use media queries*/ 
      max-width: 100%; 
@@ -36,12 +36,12 @@ html {
     /* height: auto; */
 }
 
-.mini-article-date-and-time {
+.mini-article__date-time {
     display: flex;
     text-transform: uppercase;
 }
 
-.mini-article-title {
+.mini-article__title {
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
@@ -56,12 +56,12 @@ html {
     transition: all 1s ease;
 }
 
-.mini-article-title:hover {
+.mini-article__title:hover {
     color: #FFC804;
     text-decoration: underline;
 }
 
-.mini-article-description {
+.mini-article__description {
     font-family: Merienda;
     font-style: normal;
     font-weight: bold;
@@ -72,7 +72,7 @@ html {
     color: #000000;
 }
 
-.mini-article-separator {
+.mini-article__separator {
      margin: 2rem 10rem; 
 
     /* Gold */
@@ -88,7 +88,7 @@ html {
     content: '';
 } */
 
-.mini-article-date {
+.date-time__date {
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
@@ -100,7 +100,7 @@ html {
     color: rgba(0, 0, 0, 0.6);
 }
 
-.mini-article-read-time {
+.date-time__time {
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
@@ -112,7 +112,7 @@ html {
     color: rgba(0, 0, 0, 0.6);
 }
 
-.mini-article-categories {
+.categories__category {
     display: flex;
     flex-wrap: wrap;
     font-family: Roboto;
@@ -125,10 +125,7 @@ html {
     color: rgba(0, 0, 0, 0.5);
 }
 
-.mini-article-categories-container {
-}
-
-.mini-article-categories p:not(:first-of-type) {
+.categories__category p:not(:first-of-type) {
     text-decoration: underline;
     /* border-bottom: 1px solid; */
     /* color: #FF9900; */
@@ -145,32 +142,32 @@ html {
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-    .mini-article-container-flex {
+    .mini-article--flex {
         display: flex;
         flex-direction: column-reverse; 
     }
 
-    .mini-article-container {
+    .mini-article {
         height: 100%; 
         padding: 2em;
     }
 
-    .mini-article-description p:not(:nth-of-type(1)),
-    .mini-article-separator,
-    .mini-article-categories p:first-of-type {
+    .mini-article__description p:not(:nth-of-type(1)),
+    .mini-article__separator,
+    .categories__category p:first-of-type {
         display: none;
     }
 
-    .mini-article-title {
+    .mini-article__title {
         font-size: 16px;
         padding: 1.2rem 0 0 0;
     }
 
-    .mini-article-image {
+    .mini-article__image {
         height: auto;
     }
 
-    .mini-article-categories {
+    .categories__category {
         line-height: 0px;
         font-size: inherit;
     }
@@ -178,30 +175,30 @@ html {
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
  @media only screen and (min-width: 600px) and (max-width: 767px) {
-     .mini-article-container {
+     .mini-article {
         min-height: auto;
         padding-bottom: 2rem;
      }
 
-    .mini-article-description p:not(:nth-of-type(1)),
-    .mini-article-separator,
-    .mini-article-categories p:first-of-type {
+    .mini-article__description p:not(:nth-of-type(1)),
+    .mini-article__separator,
+    .categories__category p:first-of-type {
         display: none;
     }
 
-    .mini-article-image {
+    .mini-article__image {
         height: 200px;
         width: 260px; 
     }
 
-    .mini-article-title {
+    .mini-article__title {
         padding: 1.2rem 0 0 0;
     }
  } 
 
 /* Medium devices (landscape tablets, 768px and up) */
  @media only screen and (min-width: 768px) {
-     .mini-article-description {
+     .mini-article__description {
         font-family: Merienda;
         font-style: normal;
         font-weight: bold;
@@ -210,16 +207,16 @@ html {
         color: #000000;
     }
 
-    .mini-article-separator {
+    .mini-article__separator {
         display: block;
     }
 
-    .mini-article-title {
+    .mini-article__title {
         font-size: 2.8em;
         margin-bottom: 0;
     }
 
-    .mini-article-image {
+    .mini-article__image {
         height: 231px;
         width: 300px; 
     }
