@@ -1,15 +1,16 @@
 import React from 'react';
 // import './App.css';
-import img from "./imgs/test-image.jpg";
+import img from './imgs/test-image.jpg';
 import ArticleBox from './components/ArticleBox';
 
 function App() {
-  const title = "Lorem ipsum ayn rand amet";
-  const description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tincidunt risus porta quis amet sem senectus etiam lectus nisi. Non risus feugiat nec nunc. Nibh tincidunt cursus porttitor scelerisque quisque.";
-  const date = "November 10, 2020";
-  const time = "10 min read";
+  const title = 'Lorem ipsum ayn rand amet';
+  const description =
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tincidunt risus porta quis amet sem senectus etiam lectus nisi. Non risus feugiat nec nunc. Nibh tincidunt cursus porttitor scelerisque quisque.';
+  const date = 'November 10, 2020';
+  const time = '10 min read';
   const src = img;
-  const categories = ["Objectivism", "reason", "man", "Lorem", "Ipsum", "Dolor", "Sit", "Amet"];
+  const categories = ['Objectivism', 'reason', 'man', 'Lorem', 'Ipsum', 'Dolor', 'Sit', 'Amet'];
   // function giveNextCategory(categories) {
   //   console.log("categories", categories);
   //   let category = "";
@@ -22,7 +23,14 @@ function App() {
   // }
   return (
     <div className="App">
-      <ArticleBox title={title} description={description} date={date} time={time} image={src} categories={categories}/>
+      <ArticleBox
+        title={title}
+        description={description}
+        date={date}
+        time={time}
+        image={src}
+        categories={categories}
+      />
     </div>
   );
 }
